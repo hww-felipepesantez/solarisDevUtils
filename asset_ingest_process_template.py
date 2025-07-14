@@ -24,6 +24,7 @@ def set_material_path(source_node, dest_node):
    geom_ref = mat_ref_node.geometry()
    shopmaterial_attr = list(set(geom_ref.primStringAttribValues('shop_materialpath')))[0]
    mat_lib_node.parm('matnode1').set(shopmaterial_attr)
+   print(shopmaterial_attr)
 
 #set_material_path(source_node=MAT_REF_NODE, dest_node=MATLIB_NODE)
 
@@ -56,7 +57,6 @@ def process_asset(asset_path, export=False):
     set_material_path(source_node=MAT_REF_NODE, dest_node=MATLIB_NODE)
 
     # Optional: set other parameters
-    # e.g., hou.node("/obj/geo1/polyreduce1").parm("percentage").set(50)
 
     asset_name = asset_path.split("/")[-1]
     # Optional: export or save
